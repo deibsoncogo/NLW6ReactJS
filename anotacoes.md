@@ -20,3 +20,31 @@ Na plataforma do Firebase em visão geral definimos o formato da aplicação ond
 ```bash
 yarn add firebase
 ```
+
+## Aula 02 - Maximum Speed
+>A decolagem foi um sucesso e agora é hora de avançar com velocidade máxima rumo ao nosso objetivo
+
+Todo componente precisa conter a primeira letra maiúscula
+Devemos importar todos os arquivo como imagem para ter um bom funcionamento
+
+Na criação da estilização vamos usar a dependência baixo pois ela possui vantagens, a versão mais recente não suporta o `create react app`
+```bash
+yarn add node-sass@^5.0.0
+```
+
+Para lidar com as rotas iremos usar esta dependência e suas tipagens
+```bash
+yarn add react-router-dom
+yarn add @types/react-router-dom -D
+```
+
+Para navegar entre páginas a partir de um item que possui ancora como a tag `a` podemos usar o item `Link` que o `react-router-dom` possui, caso contrario temos usar o `useHistory` que o próprio `react-router-dom` possui com a combinação de uma função como abaixo
+```ts
+const history = useHistory();
+
+  function handleNavigateToNewRoom() {
+    history.push("/room/new");
+  }
+```
+
+Agora iremos usar a metodologia de `context` onde a partir dele conseguiremos jogar informações em toda aplicação
