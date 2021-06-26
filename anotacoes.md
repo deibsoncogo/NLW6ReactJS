@@ -48,3 +48,37 @@ const history = useHistory();
 ```
 
 Agora iremos usar a metodologia de `context` onde a partir dele conseguiremos jogar informações em toda aplicação
+
+## Aula 03 – In Orbit
+>Estamos em órbita, explorando um universo infinito, repleto de novos conhecimentos
+
+A importação abaixo impede que mais de uma rota seja carregada
+```bash
+import { Switch } from "react-router-dom";
+```
+
+Conseguimos criar regras de negocio para o nosso banco de dados acessando a plataforma
+```ts
+{
+  "rules": {
+    "room": {
+      ".read": false,
+      ".write": "auth != null",
+      "$roomId": {
+        ".read": true,
+        ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)",
+        "questions": {
+          ".read": true,
+          ".write": "auth != null && (!data.exists() || data.parent().child('authorId').val() == auth.id)",
+          "likes": {
+            ".read": true,
+            ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)",
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Temos a dependência `React Hot Toast` que permite criar notificação incríveis
