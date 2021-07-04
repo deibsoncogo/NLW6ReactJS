@@ -23,6 +23,10 @@
     "eslint-plugin-import-helpers"
   ],
   "rules": {
+    "max-len": "off",
+    "react/no-unused-prop-types": "off",
+    "react/require-default-props": "off",
+    "no-shadow": "off",
     "no-alert": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/destructuring-assignment": "off",

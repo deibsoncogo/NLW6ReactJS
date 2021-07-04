@@ -1,7 +1,7 @@
 # Rocketseat - Next Level Week 6 Together - Trilha React JS
 Conteúdo aprendido no Next Level Week 6 Together na trilha de React JS (Frontend) com o Diego Fernandes onde foi criado um site para lidar com a demanda de perguntas onde os usuários precisam realizar um login da Google para enviar suas duvidas e votar para assim criar nível de importância
 
-## Aula 01 – Liftoff
+## Aula 01 - Liftoff
 >We're go for launch, é hora de decolar e partir rumo ao próximo nível. Esse é o começo da nossa missão
 
 O `Firebase` é um backend pronto completo para lidar com diversas funcionalidades a partir de uma plataforma online, ele é recomendado para dar agilidade no projeto ou é na aplicação de funcionalidade especifica como a criação de uma autenticação
@@ -49,7 +49,7 @@ const history = useHistory();
 
 Agora iremos usar a metodologia de `context` onde a partir dele conseguiremos jogar informações em toda aplicação
 
-## Aula 03 – In Orbit
+## Aula 03 - In Orbit
 >Estamos em órbita, explorando um universo infinito, repleto de novos conhecimentos
 
 A importação abaixo impede que mais de uma rota seja carregada
@@ -82,3 +82,28 @@ Conseguimos criar regras de negocio para o nosso banco de dados acessando a plat
 ```
 
 Temos a dependência `React Hot Toast` que permite criar notificação incríveis
+
+## Aula 04 - Landing
+>É hora de pousar em um novo planeta
+
+Temos o comando abaixo que vai executar a formatação a partir do segundo item da lista
+```ts
+// os itens ter essa formatação exceto o primeiro
+& + .question {
+  margin-top: 8px;
+}
+```
+
+Quando criamos um código isolado para utilizar várias vezes e ele gerar algo visual estaremos criando um componente e quando não estamos criando um hook
+
+Podemos usar o `&` para coseguir definir tipagens manuais junto de padrões da linguagem
+```ts
+type ButtonType = ButtonHTMLAttributes<HTMLButtonElement> & {
+  isOutlined?: boolean;
+}
+```
+
+Conseguimos trocar a cor de um `svg` somente se ele estiver dentro da nossa aplicação sem a realização de uma importação
+
+Para tivar itens nativos no `HTML` podemos a dependencia do `React` chamada de `ReactNode`
+O `some` realiza uma busta e retornar um booleano

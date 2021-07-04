@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { useHistory } from "react-router-dom";
 import GoogleIconImg from "../assets/google-icon.svg";
 import IllustrationImg from "../assets/illustration.svg";
@@ -6,7 +6,6 @@ import LogoImg from "../assets/logo.svg";
 import { Button } from "../components/Button";
 import { UseAuth } from "../contexts/AuthContext";
 import { database } from "../services/firebase";
-
 import "../styles/auth.scss";
 
 export function Home() {
@@ -14,7 +13,7 @@ export function Home() {
   const { user, signInWithGoogle } = UseAuth();
   const [roomCode, setRoomCode] = useState("");
 
-  async function handleCreateRoom() {
+  async function HandleCreateRoom() {
     if (!user) {
       await signInWithGoogle();
     }
@@ -22,7 +21,7 @@ export function Home() {
     history.push("/room/new");
   }
 
-  async function handleJoinRoom(event: FormEvent) {
+  async function HandleJoinRoom(event: FormEvent) {
     event.preventDefault();
 
     if (roomCode.trim() === "") {
@@ -33,6 +32,11 @@ export function Home() {
 
     if (!roomRef.exists()) {
       alert("Sala não existe!");
+      return;
+    }
+
+    if (roomRef.val().endedAt) {
+      alert("Sala fechada!");
       return;
     }
 
@@ -49,12 +53,12 @@ export function Home() {
       <main>
         <div className="mainContent">
           <img src={LogoImg} alt="Letmeask" />
-          <button onClick={handleCreateRoom} className="createRoom">
+          <button onClick={HandleCreateRoom} className="createRoom">
             <img src={GoogleIconImg} alt="Logo do Google" />
             Crie sua sala com o Google
           </button>
           <div className="separator">ou entre em uma sala</div>
-          <form onSubmit={handleJoinRoom}>
+          <form onSubmit={HandleJoinRoom}>
             <input
               type="text"
               placeholder="Digite o código da sala"
