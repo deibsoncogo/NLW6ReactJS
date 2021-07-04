@@ -42,9 +42,9 @@ Para navegar entre páginas a partir de um item que possui ancora como a tag `a`
 ```ts
 const history = useHistory();
 
-  function handleNavigateToNewRoom() {
-    history.push("/room/new");
-  }
+function handleNavigateToNewRoom() {
+  history.push("/room/new");
+}
 ```
 
 Agora iremos usar a metodologia de `context` onde a partir dele conseguiremos jogar informações em toda aplicação
@@ -67,10 +67,10 @@ Conseguimos criar regras de negocio para o nosso banco de dados acessando a plat
       "$roomId": {
         ".read": true,
         ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)",
-        "questions": {
+        "question": {
           ".read": true,
           ".write": "auth != null && (!data.exists() || data.parent().child('authorId').val() == auth.id)",
-          "likes": {
+          "like": {
             ".read": true,
             ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)",
           }
@@ -107,3 +107,43 @@ Conseguimos trocar a cor de um `svg` somente se ele estiver dentro da nossa apli
 
 Para tivar itens nativos no `HTML` podemos a dependencia do `React` chamada de `ReactNode`
 O `some` realiza uma busta e retornar um booleano
+
+## Aula 05 - Surface exploration
+>Etapa final da nossa missão, em um novo planeta, vamos explorar a superfície e assimilar novos conhecimentos
+
+Para lidar com várias classes de estilização podemos usar a dependencia abaixo
+```bs
+yarn add classnames
+```
+
+Para hospedar o projeto no `Firebase` usamos a opção `Hosting`, clicamos em primeiros passo e depois instalamos a depencia abaixo de forma global
+```bs
+yarn global add firebase-tools
+```
+
+Depois executamos este comando para realizar o login, damos sim a pergunta e selecionamos a conta
+```bs
+firebase login
+```
+
+Agora dentro do projeto executamos este comando e responsemos algumas perguntas
+  Selecionamos as ferramentas que está sendo utilizado
+  Informamos se já existe um projeto no firebase
+  Agora confirmamos o nome do arquivo de regras do banco de dados
+  Alteramos o nome da pasta `public` para `build`
+  Confirmamos que existe uma página principal
+  Por último temos a opção de fazer o site se sincroniar ao `Github`
+
+```bs
+firebase init
+```
+
+Agora criamos a versão build do projeto
+```bs
+yarn build
+```
+
+Por fim para enviar o protejo para a nuvem usamos este comando
+```bs
+firebase deploy
+```

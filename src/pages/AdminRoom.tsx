@@ -1,4 +1,6 @@
 import { useHistory, useParams } from "react-router-dom";
+import AnswerImag from "../assets/answer.svg";
+import CheckImg from "../assets/check.svg";
 import DeleteImg from "../assets/delete.svg";
 import LogoImg from "../assets/logo.svg";
 import { Button } from "../components/Button";
@@ -28,6 +30,14 @@ export function AdminRoom() {
     }
   }
 
+  async function HandleCheckQuestionAsAnswered(questionId: string) {
+    await database.ref(`room/${param.roomId}/question/${questionId}`).update({ isAnswered: true });
+  }
+
+  async function HandleHighLightQuestion(questionId: string) {
+    await database.ref(`room/${param.roomId}/question/${questionId}`).update({ isHighLighted: true });
+  }
+
   return (
     <div id="pageRoom">
       <header>
@@ -53,7 +63,21 @@ export function AdminRoom() {
               key={question.id}
               content={question.content}
               author={question.author}
+              isAnswered={question.isAnswered}
+              isHighLighted={question.isHighLighted}
             >
+              {!question.isAnswered && (
+                <>
+                  <button type="button" onClick={() => HandleCheckQuestionAsAnswered(question.id)}>
+                    <img src={CheckImg} alt="Marcar pergunta como respondida" />
+                  </button>
+
+                  <button type="button" onClick={() => HandleHighLightQuestion(question.id)}>
+                    <img src={AnswerImag} alt="Dar destaque a pergunta" />
+                  </button>
+                </>
+              )}
+
               <button type="button" onClick={() => HandleDeleteQuestion(question.id)}>
                 <img src={DeleteImg} alt="Remover pergunta" />
               </button>
