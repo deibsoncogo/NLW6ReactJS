@@ -2,24 +2,11 @@
   background: #fefefe;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  padding: 24px;
+  padding: 20px 15px;
 
   // os itens ter essa formatação exceto o primeiro
   & + .question {
     margin-top: 8px;
-  }
-
-  &.highlighted {
-    background: #f4f0ff;
-    border: 1px solid #835afd;
-
-    footer .userInfo span {
-      color: #29292e;
-    }
-  }
-
-  &.answered {
-    background: #dbdcdd;
   }
 
   p {
@@ -37,47 +24,69 @@
       align-items: center;
 
       img {
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
+        border: 0.1px solid #835afd;
         border-radius: 50%;
       }
 
       span {
-        margin-left: 8px;
-        color: #737380;
+        margin-left: 10px;
+        color: #29292e;
         font-size: 14px;
       }
     }
 
-    > div {
+    .buttonInner {
       display: flex;
-      gap: 16px;
-    }
+      align-items: center;
+      gap: 18px;
 
-    button {
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      transition: filter 0.2s;
-
-      &.likeButton {
+      button {
         display: flex;
-        align-items: flex-end;
-        color: #737380;
-        gap: 8px;
+        align-items: center;
 
-        &.liked {
-          color: #835afd;
+        border: 0;
+        background: transparent;
 
-          svg path {
-            stroke: #835afd;
+        cursor: pointer;
+
+        transition: filter 0.2s;
+
+        &.likeButton {
+          display: flex;
+          align-items: flex-end;
+          gap: 8px;
+
+          color: #737380;
+
+          &.liked {
+            color: #835afd;
+
+            svg path {
+              stroke: #835afd;
+            }
           }
         }
-      }
 
-      &:hover {
-        filter: brightness(0.7);
+        &:hover:not(:disabled) {
+          filter: brightness(0.5);
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: default;
+        }
       }
     }
+  }
+
+  &.highlighted {
+    background: #f4f0ff;
+    border: 1px solid #835afd;
+  }
+
+  &.answered {
+    background: #dbdcdd;
   }
 }

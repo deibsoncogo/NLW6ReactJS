@@ -1,12 +1,11 @@
-import { useState, FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import IllustrationImg from "../assets/illustration.svg";
 import LogoImg from "../assets/logo.svg";
 import { Button } from "../components/Button";
+import { Side } from "../components/Side";
 import { UseAuth } from "../contexts/AuthContext";
 import { database } from "../services/firebase";
-
-import "../styles/auth.scss";
+import "../styles/newRoom.scss";
 
 export function NewRoom() {
   const { user } = UseAuth();
@@ -18,6 +17,7 @@ export function NewRoom() {
 
     // trim remove os espaços em branco no começo e no final
     if (newRoom.trim() === "") {
+      alert("Digite um nome para conseguir criar uma sala!");
       return;
     }
 
@@ -31,20 +31,19 @@ export function NewRoom() {
     });
 
     // redireciona o usuário
-    history.push(`/room/${firebaseRoom.key}`);
+    history.push(`/admin/room/${firebaseRoom.key}`);
   }
 
   return (
-    <div id="pageAuth">
-      <aside>
-        <img src={IllustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
-        <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>Tire as dúvidas da sua audiência em tempo-real</p>
-      </aside>
+    <div id="newRoom">
+      <Side />
+
       <main>
         <div className="mainContent">
-          <img src={LogoImg} alt="Letmeask" />
-          <h2>Criar uma nova sala</h2>
+          <img className="logoLetmeask" src={LogoImg} alt="Letmeask" />
+
+          <h2>Olá {user?.name}, deseja criar uma nova sala?</h2>
+
           <form onSubmit={handleCreateRoom}>
             <input
               type="text"
@@ -56,9 +55,10 @@ export function NewRoom() {
               Criar sala
             </Button>
           </form>
+
           <p>
-            Quer entrar em uma sala existente?
-            <Link to="/">Clique aqui</Link>
+            Para acessar uma sala,
+            <Link to="/">clique aqui</Link>.
           </p>
         </div>
       </main>

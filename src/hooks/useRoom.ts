@@ -9,7 +9,7 @@ type FirebaseQuestionType = Record<string, {
   };
   content: string;
   isAnswered: boolean;
-  isHighLighted: boolean;
+  isHighlighted: boolean;
   like: Record<string, {
     authorId: string;
   }>
@@ -23,7 +23,7 @@ type QuestionType = {
   }
   content: string;
   isAnswered: boolean;
-  isHighLighted: boolean;
+  isHighlighted: boolean;
   likeCount: number;
   likeId: string | undefined;
 }
@@ -45,10 +45,10 @@ export function UseRoom(roomId: string) {
         id: key,
         content: value.content,
         author: value.author,
-        isHighLighted: value.isHighLighted,
+        isHighlighted: value.isHighlighted,
         isAnswered: value.isAnswered,
         likeCount: Object.values(value.like ?? {}).length,
-        likeId: Object.entries(value.like ?? {}).find(([key, like]) => like.authorId === user?.id)?.[0],
+        likeId: Object.entries(value.like ?? {}).find(([, like]) => like.authorId === user?.id)?.[0],
       }));
 
       setTitle(databaseRoom.title);

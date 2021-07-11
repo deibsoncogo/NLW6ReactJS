@@ -1,0 +1,66 @@
+#newRoom {
+  display: flex;
+  align-items: stretch; // faz o itens se esticarem
+  height: 100vh; // faz ocupar toda a altura
+
+  main {
+    flex: 8; // define a quantidade a ocupar da tela
+
+    padding: 0 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    align-items: stretch;
+    text-align: center;
+
+    .logoLetmeask {
+      align-self: center;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 64px 0 24px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    form {
+      input {
+        height: 50px;
+        border-radius: 8px;
+        padding: 0 16px;
+        background: #fff;
+        border: 1px solid #a8a8b3;
+      }
+
+      button {
+        margin-top: 16px;
+      }
+
+      button, input {
+        width: 100%;
+      }
+    }
+
+    p {
+      margin-top: 14px;
+
+      font-size: 16px;
+      line-height: 30px;
+      color: #737380;
+      // margin-top: 16px;
+
+      a {
+        margin-left: 3px;
+        color: #e559f9;
+      }
+    }
+  }
+}

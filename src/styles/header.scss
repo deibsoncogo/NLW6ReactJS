@@ -1,0 +1,80 @@
+#header {
+  padding: 24px 50px;
+  background: #f0f0f0;
+  border-bottom: 2px solid #cecece;
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logoLetmeask {
+    display: flex;
+    align-items: center;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+
+    img {
+      height: 50px;
+    }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .roomCode {
+      display: flex;
+
+      border-radius: 8px;
+      overflow: hidden;
+
+      background: #e2e2e2;
+      border: 1px solid #835afd;
+      cursor: pointer;
+
+      transition: filter(0.5s);
+
+      &:hover {
+        filter: brightness(0.95);
+      }
+
+      div {
+        height: 40px;
+        background: #835afd;
+        padding: 0 12px;
+      }
+
+      span {
+        align-self: center;
+        padding: 0 16px 0 12px;
+
+        width: 240;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    .closeRoom {
+      background: #e2e2e2;
+      border: 1px solid #835afd;
+      border-radius: 8px;
+
+      height: 40px;
+      width: 150px;
+      font-weight: 500;
+
+      cursor: pointer;
+
+      transition: filter(0.5s);
+
+      &:hover {
+        filter: brightness(0.95);
+      }
+    }
+  }
+}

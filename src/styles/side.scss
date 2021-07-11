@@ -1,0 +1,52 @@
+#side {
+  flex: 7; // define a quantidade a ocupar da tela
+  display: flex;
+  flex-direction: column;
+
+  background: #835afd;
+
+  main {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column; // deixa um item abaixo do outro
+
+    strong {
+      font: 700 36px "Poppins", sans-serif;
+      line-height: 42px;
+      margin-top: 16px;
+      color: #fff;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 28px; // altura da linha
+      margin-top: 16px;
+      color: #f8f8f8;
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 32px;
+    margin-bottom: 30px;
+    border: 0;
+    border-radius: 8px;
+
+    width: 150px;
+    height: 40px;
+    background: transparent;
+    color: #fff;
+    font: 500 18px "Poppins", sans-serif;
+
+    transition: filter(0.5s);
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.9);
+      background: #ea4335;
+      border: 1px solid #baa3ff;
+    }
+  }
+}

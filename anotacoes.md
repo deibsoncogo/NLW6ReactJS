@@ -96,7 +96,7 @@ Temos o comando abaixo que vai executar a formatação a partir do segundo item 
 
 Quando criamos um código isolado para utilizar várias vezes e ele gerar algo visual estaremos criando um componente e quando não estamos criando um hook
 
-Podemos usar o `&` para coseguir definir tipagens manuais junto de padrões da linguagem
+Podemos usar o `&` para conseguir definir tipagens manuais junto de padrões da linguagem
 ```ts
 type ButtonType = ButtonHTMLAttributes<HTMLButtonElement> & {
   isOutlined?: boolean;
@@ -105,18 +105,18 @@ type ButtonType = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 Conseguimos trocar a cor de um `svg` somente se ele estiver dentro da nossa aplicação sem a realização de uma importação
 
-Para tivar itens nativos no `HTML` podemos a dependencia do `React` chamada de `ReactNode`
-O `some` realiza uma busta e retornar um booleano
+Para ativar itens nativos no `HTML` podemos a dependência do `React` chamada de `ReactNode`
+O `some` realiza uma busca e retornar um booleano
 
 ## Aula 05 - Surface exploration
 >Etapa final da nossa missão, em um novo planeta, vamos explorar a superfície e assimilar novos conhecimentos
 
-Para lidar com várias classes de estilização podemos usar a dependencia abaixo
+Para lidar com várias classes de estilização podemos usar a dependência abaixo
 ```bs
 yarn add classnames
 ```
 
-Para hospedar o projeto no `Firebase` usamos a opção `Hosting`, clicamos em primeiros passo e depois instalamos a depencia abaixo de forma global
+Para hospedar o projeto no `Firebase` usamos a opção `Hosting`, clicamos em primeiros passo e depois instalamos a dependência abaixo de forma global
 ```bs
 yarn global add firebase-tools
 ```
@@ -132,7 +132,7 @@ Agora dentro do projeto executamos este comando e responsemos algumas perguntas
   Agora confirmamos o nome do arquivo de regras do banco de dados
   Alteramos o nome da pasta `public` para `build`
   Confirmamos que existe uma página principal
-  Por último temos a opção de fazer o site se sincroniar ao `Github`
+  Por último temos a opção de fazer o site se sincronizar ao `Github`
 
 ```bs
 firebase init
